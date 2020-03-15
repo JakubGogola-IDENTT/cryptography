@@ -49,7 +49,7 @@ int main() {
 
     srandom(1);
 
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 30; i++) {
         printf("Standard: %d\n", (unsigned int) random());
         printf("Predicted: %d\n\n", glibc_next(gen));
     }
