@@ -12,17 +12,17 @@ int predict(int idx) {
 }
 
 int main() {
+
     srand(1);
+
+    unsigned int correct = 0;
     int expected, predicted;
     int i;
 
-    for (i = 0; i < 30; i++) {
+    for (i = 0; i < 34; i++) {
         r[i] = rand();
     }
 
-    unsigned int correct = 0;
-
-    // test
     for (i = 0; i < MAX; i++) {
         expected = rand();
         predicted = predict(i);
