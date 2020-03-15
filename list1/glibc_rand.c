@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX 2137
+
 struct glibc_rand_generator {
-    int r[344];
-    int incr;
+    unsigned int r[MAX];
+    unsigned int incr;
 };
 
 void glibc_init (struct glibc_rand_generator *gen, int seed) {
@@ -33,6 +35,7 @@ void glibc_init (struct glibc_rand_generator *gen, int seed) {
 unsigned int glibc_next (struct glibc_rand_generator *gen) {
     unsigned int next = gen->r[gen->incr - 31] + gen->r[gen->incr - 3];
 
+    gen->r[gen->incr] = next;
     gen->incr++;
 
     return (unsigned int) next >> 1;
@@ -44,10 +47,10 @@ int main() {
 
     glibc_init(gen, 1);
 
-    srand(1);
+    srandom(1);
 
-    for (int i = 0; i < 3; i++) {
-        printf("Standard: %d\n", rand());
+    for (int i = 0; i < 15; i++) {
+        printf("Standard: %d\n", (unsigned int) random());
         printf("Predicted: %d\n\n", glibc_next(gen));
     }
 
