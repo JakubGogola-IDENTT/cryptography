@@ -13,29 +13,29 @@ int predict(int idx) {
 
 int main() {
     srand(1);
-    int expected, predicted;
+    int expected_value, predicted_value;
     int i;
 
     for (i = 0; i < 60; i++) {
         r[i] = rand();
     }
 
-    unsigned int correct = 0;
+    unsigned int correct_count = 0;
 
     // test
     for (i = 0; i < 120; i++) {
-        expected = rand();
-        predicted = predict(i);
+        expected_value = rand();
+        predicted_value = predict(i);
 
-        auto bits = std::bitset<32> (expected ^ ~predicted);
+        auto bits = std::bitset<32> (expected_value ^ ~predicted_value);
 
-        correct += bits.count();
+        correct_count += bits.count();
 
 
-        std::cout << ((double) correct)/(i+1)/32 << std::endl;
+        std::cout << ((double) correct_count)/(i + 1)/32 << std::endl;
 
     }
 
-    printf("Correct: %d\n", correct);
+    printf("Correct: %d\n", correct_count);
 
 }
