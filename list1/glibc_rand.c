@@ -46,7 +46,7 @@ int main() {
 
     srand(1);
 
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < 3; i++) {
         printf("Standard: %d\n", rand());
         printf("Predicted: %d\n\n", glibc_next(gen));
     }
