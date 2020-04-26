@@ -1,0 +1,38 @@
+{
+  "name": "list2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-key": "nodemon -r esm src/createKeystore.js --env=development",
+    "start:oracle": "nodemon -r esm src/oracle-service/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "jest": "^26.0.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "buffer-xor": "^2.0.2",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "increment-buffer": "^1.0.1",
+    "key-store": "^1.1.0",
+    "lodash.padend": "^4.6.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4",
+    "query-string": "^6.12.1",
+    "yargs": "^15.3.1"
+  }
+}
